@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #e1e5ee;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bmi_calculator.BMIController">
+   <children>
+      <MenuBar layoutX="-1.0" layoutY="1.0" prefHeight="28.0" prefWidth="400.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#onClearMenuClick" text="Clear" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#onExitMenuClick" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onHelpMenuClick" text="How to use" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Text fill="#2a324b" layoutX="-4.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculate your body mass index" textAlignment="CENTER" wrappingWidth="407.4254150390625">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <TextField fx:id="weightField" layoutX="28.0" layoutY="122.0" promptText="Weight">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button layoutX="110.0" layoutY="249.0" mnemonicParsing="false" onAction="#onCalculateButtonClick" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #2a324b;" text="Calculate" textAlignment="CENTER" textFill="#e1e5ee" />
+      <TextField fx:id="heightField" layoutX="28.0" layoutY="187.0" promptText="Height">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <RadioButton fx:id="kg_button" layoutX="223.0" layoutY="127.0" mnemonicParsing="false" selected="true" text="kg">
+         <toggleGroup>
+            <ToggleGroup fx:id="mass" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="lbs_button" layoutX="304.0" layoutY="127.0" mnemonicParsing="false" text="lbs" toggleGroup="$mass" />
+      <RadioButton fx:id="cm_button" layoutX="223.0" layoutY="191.0" mnemonicParsing="false" selected="true" text="cm">
+         <toggleGroup>
+            <ToggleGroup fx:id="height" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="inch_button" layoutX="304.0" layoutY="192.0" mnemonicParsing="false" text="inch" toggleGroup="$height" />
+      <Label fx:id="bmiResultLabel" layoutX="170.0" layoutY="312.0" text="BMI result">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="statusResultLabel" layoutX="163.0" layoutY="352.0" text="Status result">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
